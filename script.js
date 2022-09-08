@@ -235,7 +235,7 @@ function animate() {
 //body of code i guess?
 
 //makes frames
-for (var i = 0; i <= 10; i++) {
+for (var i = 0; i < 10; i++) {
 	let frame = new StickFigure();
   frames[i] = frame;
 }
