@@ -1,6 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test/style.css">
+  </head>
   <body>
-    <h1>Hello!</h1>
-  <body>
-<html>
-  
+    <h1 id="header"></h1>
+    <p>
+    Edit the frames by clicking on a joint, moving it, then clicking in the place you want it. Switch frames with the buttons below. Press play to animate!
+    </p>
+    <canvas id="myCanvas" width="400" height="400" style="border: 1pt solid black" onmousedown="mouseDown()"></canvas>>
+    <button type="button" id="backBtn" onclick="back()">previous</button>
+    <button type="button" id="playBtn" onclick="play()">play</button>
+    <button type="button" id="forwardBtn" onclick="forward()">next</button>
+    <dd id="frameNumDisplay">1</dd>
+    <script src="test/script.js"></script>
+  </body>
+</html>
+
+
+
+
