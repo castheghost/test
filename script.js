@@ -3,6 +3,7 @@ const c = document.getElementById("myCanvas");
 const myCanvas = c.getContext("2d");
 
 var frameNumDisplay = document.getElementById("frameNumDisplay");
+var forwardBtn = document.getElementById("forwardBtn");
 
 myCanvas.lineWidth = 5;
 myCanvas.lineJoin = 'round';
@@ -179,13 +180,24 @@ function back() {
 	if (0 < currentFrameNum && currentFrameNum <= (frames.length - 1)) {
 		currentFrameNum --;
     frameNumDisplay.innerText = currentFrameNum + 1;
+    if (currentFrameNum != frames.length - 1) {
+      forwardBtn.innerText = "next frame";
+    }
   }
 }
 
-//goes to next frame
+//goes to next frame or adds new frame
 function forward() {
 	if (0 <= currentFrameNum && currentFrameNum < (frames.length - 1)) {
 		currentFrameNum ++;
+    frameNumDisplay.innerText = currentFrameNum + 1;
+    if (currentFrameNum == frames.length - 1) {
+        forwardBtn.innerText = "add frame";
+    }
+  }
+  else if (currentFrameNum == frames.length - 1) {
+    addFrame();
+    currentFrameNum ++;
     frameNumDisplay.innerText = currentFrameNum + 1;
   }
 }
@@ -229,6 +241,11 @@ function animate() {
  	 	editMode = true;
     f = 0;
   }
+}
+
+function addFrame() {
+  let frame = new StickFigure();
+  frames[frames.length] = frame;
 }
 
 
