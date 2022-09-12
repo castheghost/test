@@ -181,7 +181,7 @@ function back() {
 		currentFrameNum --;
     frameNumDisplay.innerText = currentFrameNum + 1;
     if (currentFrameNum != frames.length - 1) {
-      forwardBtn.innerText = "next frame";
+      forwardBtn.textContent = "next frame";
     }
   }
 }
@@ -192,7 +192,7 @@ function forward() {
 		currentFrameNum ++;
     frameNumDisplay.innerText = currentFrameNum + 1;
     if (currentFrameNum == frames.length - 1) {
-        forwardBtn.innerText = "add frame";
+        forwardBtn.textContent = "add frame";
     }
   }
   else if (currentFrameNum == frames.length - 1) {
