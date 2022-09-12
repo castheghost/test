@@ -47,70 +47,8 @@ class StickFigure {
     this.movingPoint = this.p[0];
   }
 
-  changeHead(x, y) {
-    this.p[0].x += x;
-    this.p[0].y += y;
-    return;
-  }
-
-  change1(x, y) {
-    this.p[1].x += x;
-    this.p[1].y += y;
-    return;
-  }
-
-  change2(x, y) {
-    this.p[2].x += x;
-    this.p[2].y += y;
-    return;
-  }
-
-  change3(x, y) {
-    this.p[3].x += x;
-    this.p[3].y += y;
-    return;
-  }
-
-  change4(x, y) {
-    this.p[4].x += x;
-    this.p[4].y += y;
-    return;
-  }
-
-  change5(x, y) {
-    this.p[5].x += x;
-    this.p[5].y += y;
-    return;
-  }
-
-  change6(x, y) {
-    this.p[6].x += x;
-    this.p[6].y += y;
-    return;
-  }
-
-  change7(x, y) {
-    this.p[7].x += x;
-    this.p[7].y += y;
-    return;
-  }
-
-  change8(x, y) {
-    this.p[8].x += x;
-    this.p[8].y += y;
-    return;
-  }
-
-  change9(x, y) {
-    this.p[9].x += x;
-    this.p[9].y += y;
-    return;
-  }
-
-  change10(x, y) {
-    this.p[10].x += x;
-    this.p[10].y += y;
-    return;
+  changePoints(p) {
+    this.p = p;
   }
 
   draw() {
@@ -245,6 +183,7 @@ function animate() {
 
 function addFrame() {
   let frame = new StickFigure();
+  frame.changePoints(frames[currentFrameNum].p);
   frames[frames.length] = frame;
 }
 
