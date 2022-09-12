@@ -30,6 +30,12 @@ class Point {
 
 class StickFigure {
 
+  constructor(p) {
+    this.headr = 25;
+    this.p = [];
+    this.p = p;
+  }
+
   constructor() {
     this.headr = 25;
   	this.p = [];
@@ -182,8 +188,8 @@ function animate() {
 }
 
 function addFrame() {
-  let frame = new StickFigure();
-  frame.changePoints(frames[currentFrameNum].p);
+  let frame = new StickFigure(frames[currentFrameNum].p);
+  //frame.changePoints(frames[currentFrameNum].p);
   frames[frames.length] = frame;
 }
 
