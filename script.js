@@ -135,7 +135,7 @@ function back() {
   }
 }
 
-//goes to next frame or adds new frame
+//goes to next frame
 function forward() {
 	if (0 <= currentFrameNum && currentFrameNum < (frames.length - 1)) {
 		currentFrameNum ++;
