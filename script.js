@@ -3,7 +3,6 @@ const c = document.getElementById("myCanvas");
 const myCanvas = c.getContext("2d");
 
 var frameNumDisplay = document.getElementById("frameNumDisplay");
-var forwardBtn = document.getElementById("forwardBtn");
 
 myCanvas.lineWidth = 5;
 myCanvas.lineJoin = 'round';
@@ -133,9 +132,6 @@ function back() {
 	if (0 < currentFrameNum && currentFrameNum <= (frames.length - 1)) {
 		currentFrameNum --;
     frameNumDisplay.innerText = currentFrameNum + 1;
-    if (currentFrameNum != frames.length - 1) {
-      forwardBtn.textContent = "next frame";
-    }
   }
 }
 
@@ -144,14 +140,17 @@ function forward() {
 	if (0 <= currentFrameNum && currentFrameNum < (frames.length - 1)) {
 		currentFrameNum ++;
     frameNumDisplay.innerText = currentFrameNum + 1;
-    if (currentFrameNum == frames.length - 1) {
-        forwardBtn.textContent = "add frame";
-    }
   }
-  else if (currentFrameNum == frames.length - 1) {
+}
+
+function add() {
+  if (currentFrameNum == frames.length - 1) {
     addFrame();
     currentFrameNum ++;
     frameNumDisplay.innerText = currentFrameNum + 1;
+  }
+  else if (currentFrameNum < frames.length - 1) {
+    addFrame();
   }
 }
 
@@ -199,13 +198,15 @@ function animate() {
 function addFrame() {
   let frame = new StickFigure();
   //frame.changePoints(frames[currentFrameNum].p);
-  frames[frames.length] = frame;
-  ref = frames[currentFrameNum];
+  ref = frames[frames.length - 1];
   temp = 0;
   for (i = 0; i <= 10; i++) {
     temp = ref.getX(i);
     frame.setX(i, temp);
+    temp = ref.getY(i);
+    frame.setY(i, temp);
   }  
+  frames[frames.length] = frame;
 }
 
 
