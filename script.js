@@ -212,8 +212,10 @@ function addFrame() {
 //body of code i guess?
 
 //makes first frame
-let frame = new StickFigure();
-frames[0] = frame;
+let init = new StickFigure();
+frames[0] = init;
+let init2 = new StickFigure();
+frames[1] = init2;
 
 //watches for mouse moved and moves points if dragging
 c.addEventListener("mousemove", function(e) { 
