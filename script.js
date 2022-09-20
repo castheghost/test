@@ -47,8 +47,23 @@ class StickFigure {
     this.movingPoint = this.p[0];
   }
 
-  changePoints(p) {
-    this.p = p;
+
+  getX(n) {
+    return this.p[n].x;
+  }
+
+  getY(n) {
+    return this.p[n].y;
+  }
+
+  setX(n, x) {
+    this.p[n].x = x;
+    return;
+  }
+
+  setY(n, y) {
+    this.p[n].y = y;
+    return;
   }
 
   draw() {
@@ -185,16 +200,20 @@ function addFrame() {
   let frame = new StickFigure();
   //frame.changePoints(frames[currentFrameNum].p);
   frames[frames.length] = frame;
+  ref = frames[currentFrameNum];
+  temp = 0;
+  for (i = 0; i <= 10; i++) {
+    temp = ref.getX(i);
+    frame.setX(i, temp);
+  }  
 }
 
 
 //body of code i guess?
 
-//makes frames
-for (var i = 0; i < 10; i++) {
-	let frame = new StickFigure();
-  frames[i] = frame;
-}
+//makes first frame
+let frame = new StickFigure();
+frames[0] = frame;
 
 //watches for mouse moved and moves points if dragging
 c.addEventListener("mousemove", function(e) { 
