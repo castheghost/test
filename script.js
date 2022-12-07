@@ -131,7 +131,7 @@ function mouseDown() {
 function back() {
 	if (0 < currentFrameNum && currentFrameNum <= (frames.length - 1)) {
 		currentFrameNum --;
-    frameNumDisplay.innerText = currentFrameNum + 1;
+    frameNumDisplay.innerText = (currentFrameNum + 1) + "/" + frames.length;
   }
 }
 
@@ -139,7 +139,7 @@ function back() {
 function forward() {
 	if (0 <= currentFrameNum && currentFrameNum < (frames.length - 1)) {
 		currentFrameNum ++;
-    frameNumDisplay.innerText = currentFrameNum + 1;
+    frameNumDisplay.innerText = (currentFrameNum + 1) + "/" + frames.length;
   }
 }
 
@@ -147,10 +147,11 @@ function add() {
   if (currentFrameNum == frames.length - 1) {
     addFrame();
     currentFrameNum ++;
-    frameNumDisplay.innerText = currentFrameNum + 1;
+    frameNumDisplay.innerText = (currentFrameNum + 1) + "/" + frames.length;
   }
   else if (currentFrameNum < frames.length - 1) {
     addFrame();
+    frameNumDisplay.innerText = (currentFrameNum + 1) + "/" + frames.length;
   }
 }
 
